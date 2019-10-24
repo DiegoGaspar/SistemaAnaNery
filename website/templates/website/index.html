@@ -1,0 +1,28 @@
+{% extends 'website/base.html' %}
+{% load static %}
+
+{% block main %}
+{% include 'website/menu.html' %}
+<div class="row">
+    <div class="bg-inicial">
+        <nav class="inicial">
+           <h1><a href=""><img src="{% static 'img/logo.png' %}" class="img-fluid" alt="Curso Ana Nery">
+           </a></h1>
+
+            <li><button type="button" class="btn btn-secondary">Escolha Seu Curso</button>
+            </li>
+            <li><button type="button" class="btn btn-secondary">Calendário</button>
+            </li>
+        </nav>
+    </div>
+</div>
+<div class="bg-dados">
+        <div class="dados">
+            <ul><li></li></ul>
+        </div>
+</div>
+{% include 'website/footer.html'%}
+
+
+
+{% endblock %}

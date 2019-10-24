@@ -1,0 +1,79 @@
+{% extends 'base.html'%}
+{% load bootstrap %}
+
+{% block main %}
+<ul class="nav nav-pills">
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'core_home'%}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item active" href="{% url 'core_aluno_novo'%}">Cadastro de Alunos</a>
+                <a class="dropdown-item " href="{% url 'core_lista_alunos'%}">Lista de Alunos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item " href="{% url 'core_professor_novo'%}">Cadastro de Professor</a>
+                <a class="dropdown-item " href="{% url 'core_lista_professor'%}">Lista de Professores</a>
+            </div>
+            </li>
+            <li class="nav-item">
+            <a class="nav-link" href="#">Log-out</a>
+</ul>
+
+<div class="row">
+    <div class="col-12">
+        <h1>Cadastro</h1>
+    </div>
+</div>
+
+<form action="{% url   'core_aluno_novo'  %}" method="POST">
+    {% csrf_token %}
+    <div class="row">
+        <div class="col-sm-6">
+            {{form.nome|bootstrap_horizontal}}
+         </div>
+        <div class="col-sm-6">
+            {{form.cpf|bootstrap_horizontal}}
+         </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6">
+             {{form.pai|bootstrap_horizontal}}
+        </div>
+        <div class="col-sm-6">
+             {{form.mae|bootstrap_horizontal}}
+         </div>
+    </div>
+    <div class="row">
+         <div class="col-sm-6">
+            {{form.nascimento|bootstrap_horizontal}}
+         </div>
+         <div class="col-sm-6">
+            {{form.sexo|bootstrap_horizontal}}
+         </div>
+    </div>
+    <div class="row">
+         <div class="col-sm-6">
+            {{form.email|bootstrap_horizontal}}
+         </div>
+        <div class="col-sm-6">
+            {{form.coren|bootstrap_horizontal}}
+         </div>
+    </div>
+    <div class="row">
+         <div class="col-sm-6">
+            {{form.endereco|bootstrap_horizontal}}
+         </div>
+        <div class="col-sm-6">
+            {{form.telefone|bootstrap_horizontal}}
+         </div>
+    </div>
+
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <a href="{% url 'core_lista_alunos' %}" class="btn btn-info">Lista de alunos</a>
+</form>
+
+
+
+{% endblock %}
