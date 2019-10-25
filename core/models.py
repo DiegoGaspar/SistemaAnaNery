@@ -1,5 +1,6 @@
 from django.db import models
 
+
 #classe cadastro de aluno
 class Aluno(models.Model):
     SEXO_CHOICES = ((u'M', 'Masculino'), (u'F', 'Feminino'))
@@ -34,4 +35,26 @@ class Professor(models.Model):
 
     def __str__(self):
         return self.nome
+
+#class de cadastro de curso
+class Curso(models.Model):
+    codigo = models.IntegerField()
+    nomeCurso = models.CharField(max_length=20)
+    investimento = models.DecimalField(max_digits=6,decimal_places=2)
+    desconto = models.DecimalField(max_digits=6, decimal_places=2, blank=True)
+    total = models.DecimalField(max_digits=6, decimal_places=2, blank=True)
+    manha= models.BooleanField(default=False)
+    tarde = models.BooleanField(default=False)
+    noite = models.BooleanField(default=False)
+    outroHorario = models.BooleanField(default=False)
+    facilitador = models.ManyToManyField(Professor)
+    obs = models.TextField()
+
+
+    def Total(self, investimento, desconto):
+        self.total = investimento - desconto
+        return self.total
+
+    def __str__(self):
+        return self.nomeCurso +'-'+  str(self.total)
 
