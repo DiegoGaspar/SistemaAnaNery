@@ -50,11 +50,6 @@ class Curso(models.Model):
     facilitador = models.ManyToManyField(Professor)
     obs = models.TextField()
 
-    def Total(self, investimento, desconto):
-        self.total = investimento - desconto
-        return self.total
-
-
     def __str__(self):
         return self.nomeCurso +'-'+  str(self.total)
 

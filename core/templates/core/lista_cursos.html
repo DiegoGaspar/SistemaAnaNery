@@ -1,0 +1,43 @@
+{% extends 'base.html'%}
+{% load bootstrap %}
+
+{% block main %}
+<ul class="nav nav-pills">
+            <li class="nav-item">
+            <a class="nav-link" href="{% url 'core_home'%}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
+            <div class="dropdown-menu">
+                <a class="dropdown-item " href="{% url 'core_aluno_novo'%}">Cadastro de Alunos</a>
+                <a class="dropdown-item active" href="{% url 'core_lista_alunos'%}">Lista de Alunos</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="{% url 'core_professor_novo'%}">Cadastro de Professor</a>
+                <a class="dropdown-item " href="{% url 'core_lista_professor'%}">Lista de Professores</a>
+            </div>
+            </li>
+            {% if user.is_authenticated %}
+                <li class="nav-item">
+                    <a class="nav-link disabled" href="">Olá, {{ user }}</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+                </li>
+            {% else %}
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'login' %}">Login</a>
+                </li>
+            {% endif %}
+</ul>
+
+<div class="col-6">
+    <h2>Lista de Cursos</h2>
+        <ul>
+        {% for curso in curso %}
+            <li>
+                <a href="{% url 'core_aluno_update' curso.id %}">{{curso.nomeCurso}}</a>
+            </li>
+        {% endfor %}
+        </ul>
+</div>
+{% endblock %}

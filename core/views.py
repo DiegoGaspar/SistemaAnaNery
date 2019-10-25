@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
-from .models import Aluno, Professor
-from .forms import AlunoForm, ProfessorForm
+from .models import Aluno, Professor, Curso
+from .forms import AlunoForm, ProfessorForm, CursoForm
 from django.contrib.auth.decorators import login_required
 
 
@@ -91,3 +91,17 @@ def professor_delete(request, id):
         return render(request,'core/delete_confirm.html',{'obj':professor})
 #FIM CRUD Professor
 
+
+def lista_cursos(request):
+    form = CursoForm()
+    curso = Curso.objects.all()
+    data = {'curso':curso, 'form': form}
+    return render(request, 'core/lista_cursos.html', data)
+
+def curso_novo(request):
+    form = CursoForm(request.POST or None)
+    if form.is_valid():
+        form.save()
+        return  redirect('core_confirmacao_cadastro')
+    else:
+        return render(request, 'core/cadastro_curso.html',{'form':form})
