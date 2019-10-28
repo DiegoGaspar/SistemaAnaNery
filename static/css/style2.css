@@ -1,0 +1,35 @@
+.login-back{
+    background: #535759;
+    text-align: center;
+    position: absolute;
+    position: relative;
+    color:#ffff;
+}
+  div.center-form {
+    position: relative;
+    min-height: 80vh;
+    background: #98A0A8;
+    color:#ffff;
+  }
+
+  div.center-form > form{
+    position: absolute;
+    top: 15%;
+    left: 49%;
+    transform: translateY(-50%) translateX(-50%);
+  }
+
+div.index-sistem{
+    background:url(../img/call-to-action-bg.jpg);
+    background-repeat: no-repeat;
+    background-size:100%;
+    padding: 14% 1em 20% 1em;
+    width: 100%;
+    height: auto;
+    padding-block-start: 205px;
+    text-align: center;
+}
+
+div.menu-sistem{
+    background: #535759;
+}

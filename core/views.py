@@ -6,7 +6,7 @@ from django.contrib.auth.decorators import login_required
 
 @login_required
 def home(request):
-    context = {'mensagem':'Bem Vindo ao Curso Ana Nery'}
+    context = {'mensagem':'Bem Vindo ao Sistema Ana Nery'}
     return render(request,'core/index.html', context)
 @login_required
 def confirmacao_cadastro(request):

@@ -1,5 +1,34 @@
+.myButton {
+    background:
+    rgb(69, 151, 41);
+    background-color: rgb(69, 151, 41);
+    border-radius: 3px;
+    border: 1px solid
+    #bad794;
+    display: inline-block;
+    cursor: pointer;
+    color:
+    #ffffff;
+    font-family: Arial;
+    font-size: 19px;
+    padding: 13px 26px;
+    text-decoration: none;
+}
+.myButton:hover {
+	background:rgba(0, 168, 89, 1);
+	background-color:rgba(0, 168, 89, 1);
+}
+.myButton:active {
+	position:relative;
+	top:1px;
+}
+
+
+
+
+
 .menu-cor{
-    background: rgba(0, 168, 89, 1);
+    background: rgba(69, 151, 41,1);
     position: fixed;
     font-size: 18px;
     weight:10%;
@@ -59,7 +88,7 @@
 }
 
 body {
-    background:rgba(0, 168, 89, 1);
+    background:rgba(69, 151, 41,1);
     font-family: 'latob', Arial, Helvetica, sans-serif;
     font-size: 1rem;
     font-weight: 550;
@@ -106,7 +135,7 @@ a {
 .inicial h1 a {
     display: inline-block;
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
     padding: 0 1em;
 }
 .inicial ul {

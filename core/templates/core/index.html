@@ -1,6 +1,9 @@
 {%extends 'base.html'%}
+{% load static %}
 
 {% block main %}
+<div class="row">
+<div class="col menu-sistem">
 <ul class="nav nav-pills">
             <li class="nav-item">
             <a class="nav-link active" href="{% url 'core_home'%}">Home</a>
@@ -28,7 +31,13 @@
                 </li>
             {% endif %}
 </ul>
-
-<h1>{{mensagem}}</h1>
-
+</div>
+</div>
+<div class="row">
+    <div class="col index-sistem">
+        <a href=""><img src="{% static 'img/logo.png' %}" class="img-fluid" alt="Curso Ana Nery"></a>
+        <h1>{{mensagem}}</h1>
+    </div>
+</div>
 {% endblock %}
+
