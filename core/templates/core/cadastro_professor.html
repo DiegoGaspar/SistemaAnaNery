@@ -44,27 +44,30 @@
 </div>
 
 <div class="row">
-    <div class="col-12">
+    <div class="col">
+
+    </div>
+    <div class="col-8">
         <form action="{% url   'core_professor_novo'  %}" method="POST">
             {% csrf_token %}
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-12">
                     {{form.nome|bootstrap }}
                  </div>
             </div>
             <div class="row">
-                <div class="col-sm-8">
+                <div class="col-8">
                      {{form.pai|bootstrap}}
                 </div>
-                <div class="col-sm-8">
+                <div class="col-8">
                      {{form.mae|bootstrap}}
                  </div>
             </div>
             <div class="row">
-                 <div class="col-sm-1">
+                 <div class="col-sm-2">
                     {{form.nascimento|bootstrap}}
                  </div>
-                 <div class="col-sm-1">
+                 <div class="col-sm-2">
                     {{form.sexo|bootstrap}}
                  </div>
                 <div class="col-sm-2">
@@ -73,13 +76,14 @@
                 <div class="col-sm-2">
                     {{form.cpf|bootstrap}}
                  </div>
-                <div class="col-sm-2">
-                    {{form.telefone|bootstrap_horizontal}}
-                 </div>
+
             </div>
             <div class="row">
                  <div class="col-sm-4">
                     {{form.email|bootstrap_horizontal}}
+                 </div>
+                <div class="col-sm-4">
+                    {{form.telefone|bootstrap_horizontal}}
                  </div>
                  <div class="col-sm-4">
                     {{form.endereco|bootstrap_horizontal}}
@@ -90,6 +94,9 @@
             <button type="submit" class="btn btn-primary">Cadastrar</button>
             <a href="{% url 'core_lista_professor' %}" class="btn btn-info">Lista de alunos</a>
         </form>
+    </div>
+    <div class="col">
+
     </div>
 </div>
 

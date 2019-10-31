@@ -46,7 +46,8 @@
 </div>
 
 <div class="row">
-    <div class="col-12">
+    <div class="col"></div>
+    <div class="col-10">
        <form action="{% url   'core_aluno_novo'  %}" method="POST">
             {% csrf_token %}
             <div class="row">
@@ -95,6 +96,7 @@
             <a href="{% url 'core_lista_alunos' %}" class="btn btn-info">Lista de alunos</a>
         </form>
     </div>
+    <div class="col"></div>
 </div>
 
 
