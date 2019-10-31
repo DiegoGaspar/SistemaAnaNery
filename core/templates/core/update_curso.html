@@ -1,0 +1,16 @@
+{% extends 'base.html'%}
+{% load bootstrap %}
+{% block main %}
+<h2>Atualizar Curso</h2>
+
+<form action="{% url 'core_curso_update' curso.id %}"method="POST">
+    {% csrf_token %}
+
+    {{ form|bootstrap}}
+
+    <button type="submit" class="btn btn-primary">Atualizar</button>
+    <a href="{%url 'core_curso_delete' curso.id %}" class="btn btn-danger">Deletar</a>
+
+</form>
+
+{% endblock %}

@@ -1,33 +1,47 @@
 {% extends 'base.html' %}
+{% load static %}
+
 {% block main %}
+<div class="row">
+    <div class="col login-back">
+        <a href=""><img src="{% static 'img/logo.png' %}" class="img-fluid" alt="Curso Ana Nery"></a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12 login-back">
+        {% if form.errors %}
+        <p>Dados informados estão incorretos. Porfavor tentar novamente</p>
+        {% endif %}
 
-{% if form.errors %}
-<p>Dados informados estão incorretos. Porfavor tentar novamente</p>
-{% endif %}
+        {% if next %}
+            {% if user.is_authenticated %}
+            <p>Você não tem acesso a essa página. Por favor efetuar LOGIN</p>
+            {% else %}
+            <p>Por favor efetuar LOGIN para ter acesso</p>
+            {% endif %}
+        {% endif %}
+    </div>
+</div>
 
-{% if next %}
-    {% if user.is_authenticated %}
-    <p>Você não tem acesso a essa página. Porfavor efetuar LOGIN</p>
-    {% else %}
-    <p>Porfavor efetuar LOGIN para ter acesso</p>
-    {% endif %}
-{% endif %}
-<form method="POST" action="{% url 'login' %}">
-    {% csrf_token %}
-    <table>
-        <tr>
-            <td>{{ form.username.label_tag }}</td>
-            <td>{{ form.username }}</td>
-        </tr>
-        <tr>
-            <td>{{ form.password.label_tag }}</td>
-            <td>{{ form.password }}</td>
-        </tr>
-    </table>
-    <input type="submit" value="login">
-    <input type="hidden" name="next" value="{{ next }}">
-</form>
+<div class="row">
+    <div class="col-12 center-form">
+    <form method="POST" action="{% url 'login' %}">
+        {% csrf_token %}
+        <table>
+            <tr>
+                <td>{{ form.username.label_tag }}</td>
+                <td>{{ form.username }}</td>
+            </tr>
+            <tr>
+                <td>{{ form.password.label_tag }}</td>
+                <td>{{ form.password }}</td>
+            </tr>
+        </table>
+        <input type="submit" value="login">
+        <input type="hidden" name="next" value="{{ next }}">
+        <p><a href="{% url 'password_reset' %}">Esqueceu a Senha?</a></p>
+    </form>
 
-<p><a href="{% url 'password_reset' %}">Esqueceu a Senha?</a></p>
-
+    </div>
+</div>
 {% endblock %}

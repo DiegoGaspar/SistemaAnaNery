@@ -1,0 +1,56 @@
+{% extends 'base.html'%}
+{% load bootstrap %}
+
+{% block main %}
+{% include 'logo-sistema.html'%}
+<div class="row">
+    <div class="col menu-sistem">
+        <ul class="nav nav-pills">
+            <li class="nav-item">
+                    <a class="nav-link" href="{% url 'core_home'%}">Home</a>
+            </li>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Aluno</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item " href="{% url 'core_aluno_novo'%}">Cadastro de Aluno</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item " href="{% url 'core_lista_alunos'%}">Lista de Alunos</a>
+                    </div>
+            </li>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Professor</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item " href="{% url 'core_professor_novo'%}">Cadastro de Professor</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item " href="{% url 'core_lista_professor'%}">Lista de Professores</a>
+                    </div>
+            </li>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Curso</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item active" href="{% url 'core_curso_novo'%}">Cadastro de Curso</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item " href="{% url 'core_lista_cursos'%}">Lista de Cursos</a>
+                    </div>
+            </li>
+
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-12">
+        <h1>Cadastro de Curso</h1>
+    </div>
+</div>
+
+<form action="{% url   'core_curso_novo'  %}" method="POST">
+    {% csrf_token %}
+    {{form|bootstrap_horizontal}}
+
+    <button type="submit" class="btn btn-primary">Cadastrar</button>
+    <a href="{% url 'core_lista_cursos' %}" class="btn btn-info">Lista de Cursos</a>
+</form>
+
+
+
+{% endblock %}
