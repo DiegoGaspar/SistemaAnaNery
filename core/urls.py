@@ -12,6 +12,8 @@ from .views import (
     professor_delete,
     lista_cursos,
     curso_novo,
+    curso_update,
+    curso_delete,
 )
 
 
@@ -31,6 +33,8 @@ urlpatterns = [
 
     url(r'^cursos/$', lista_cursos, name='core_lista_cursos'),
     url(r'^cadastro-curso/$', curso_novo, name='core_curso_novo'),
+    url(r'^curso-update/(?P<id>\d+)/$', curso_update, name='core_curso_update'),
+    url(r'^curso-delete/(?P<id>\d+)/$', curso_delete, name='core_curso_delete'),
 
 ]
 

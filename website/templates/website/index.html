@@ -3,15 +3,22 @@
 
 {% block main %}
 {% include 'website/menu.html' %}
+
+<header>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop" class="bg_video">
+        <source src="../static/img/back-video.mp4" type="video/mp4">
+    </video>
+</header>
 <div class="row">
     <div class="bg-inicial">
+
         <nav class="inicial">
            <h1><a href=""><img src="{% static 'img/logo.png' %}" class="img-fluid" alt="Curso Ana Nery">
            </a></h1>
 
             <li><button type="button" class="myButton">Informações</button>
             </li>
-            <li><a href="https://cursoananery.com/pg/"><button type="button" class="myButton">Inscreva-se</button></a>
+            <li><a href="https://cursoananery.com/pg/" target="_blank"><button type="button" class="myButton">Inscreva-se</button></a>
             </li>
         </nav>
     </div>

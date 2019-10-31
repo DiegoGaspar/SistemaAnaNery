@@ -1,0 +1,19 @@
+{% load static %}
+
+<div class="row">
+    <div class="col logo-sistema">
+        <img src="{% static 'img/favicon.png' %}" height="50">
+        {% if user.is_authenticated %}
+            <li class="nav-item">
+                <a class="nav-link disabled" href="" style="color:#e6e6e6;">Seja bem vindo, {{ user }}</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'logout'%}">Logout</a>
+            </li>
+        {% else %}
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+            </li>
+        {% endif %}
+    </div>
+</div>

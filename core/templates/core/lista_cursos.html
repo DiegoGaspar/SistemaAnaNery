@@ -2,42 +2,67 @@
 {% load bootstrap %}
 
 {% block main %}
-<ul class="nav nav-pills">
+{% include 'logo-sistema.html'%}
+<div class="row">
+    <div class="col menu-sistem">
+        <ul class="nav nav-pills">
             <li class="nav-item">
-            <a class="nav-link" href="{% url 'core_home'%}">Home</a>
+                    <a class="nav-link" href="{% url 'core_home'%}">Home</a>
             </li>
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item " href="{% url 'core_aluno_novo'%}">Cadastro de Alunos</a>
-                <a class="dropdown-item active" href="{% url 'core_lista_alunos'%}">Lista de Alunos</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item" href="{% url 'core_professor_novo'%}">Cadastro de Professor</a>
-                <a class="dropdown-item " href="{% url 'core_lista_professor'%}">Lista de Professores</a>
-            </div>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Aluno</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item " href="{% url 'core_aluno_novo'%}">Cadastro de Aluno</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item " href="{% url 'core_lista_alunos'%}">Lista de Alunos</a>
+                    </div>
             </li>
-            {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="">Olá, {{ user }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout'%}">Logout</a>
-                </li>
-            {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                </li>
-            {% endif %}
-</ul>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Professor</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item " href="{% url 'core_professor_novo'%}">Cadastro de Professor</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item " href="{% url 'core_lista_professor'%}">Lista de Professores</a>
+                    </div>
+            </li>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Curso</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item" href="{% url 'core_curso_novo'%}">Cadastro de Curso</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item active" href="{% url 'core_lista_cursos'%}">Lista de Cursos</a>
+                    </div>
+            </li>
 
-<div class="col-6">
-    <h2>Lista de Cursos</h2>
-        <ul>
-        {% for curso in curso %}
-            <li>
-                <a href="{% url 'core_aluno_update' curso.id %}">{{curso.nomeCurso}}</a>
-            </li>
-        {% endfor %}
         </ul>
+    </div>
+</div>
+
+<div class="col-ms-8">
+    <h1>Lista de Cursos</h1>
+        <table class="table table-striped">
+          <thead class="thead-dark">
+            <tr>
+              <th scope="col">Código</th>
+              <th scope="col">Nome Curso</th>
+              <th scope="col">Valor</th>
+              <th scope="col">Facilitador</th>
+            </tr>
+          </thead>
+
+          <tbody>
+          {% for curso in curso %}
+            <tr>
+              <th scope="row">{{curso.id}}</th>
+              <td><a href="{% url 'core_curso_update' curso.id %}">{{curso.nomeCurso}}</a></td>
+              <td>{{curso.investimento}}</td>
+               {% for faci in curso.facilitador.all %}
+              <td>{{faci.nome}}</td>
+               {% endfor%}
+            </tr>
+          {% endfor %}
+          </tbody>
+        </table>
+
 </div>
 {% endblock %}

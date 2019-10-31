@@ -91,13 +91,15 @@ def professor_delete(request, id):
         return render(request,'core/delete_confirm.html',{'obj':professor})
 #FIM CRUD Professor
 
-
+#CRUD Curso
+@login_required
 def lista_cursos(request):
     form = CursoForm()
     curso = Curso.objects.all()
     data = {'curso':curso, 'form': form}
     return render(request, 'core/lista_cursos.html', data)
 
+@login_required
 def curso_novo(request):
     form = CursoForm(request.POST or None)
     if form.is_valid():
@@ -105,3 +107,27 @@ def curso_novo(request):
         return  redirect('core_confirmacao_cadastro')
     else:
         return render(request, 'core/cadastro_curso.html',{'form':form})
+
+@login_required
+def curso_update(request, id):
+    data={}
+    curso = Curso.objects.get(id=id)
+    form = CursoForm(request.POST or None, instance=curso)
+    data['curso']=curso
+    data['form']=form
+
+    if request.method=='POST':
+        if form.is_valid():
+            form.save()
+            return redirect('core_lista_cursos')
+    else:
+        return render(request,'core/update_curso.html',data)
+
+@login_required
+def curso_delete(request, id):
+    curso = Curso.objects.get(id=id)
+    if request.method=='POST':
+        curso.delete()
+        return redirect('core_lista_cursos')
+    else:
+        return render(request,'core/delete_confirm.html',{'obj':curso})

@@ -36,7 +36,7 @@ class Professor(models.Model):
     def __str__(self):
         return self.nome
 
-#class de cadastro de curso
+#class de cadastro de curso--background: url(../img/about-bg.jpg);
 class Curso(models.Model):
     codigo = models.IntegerField()
     nomeCurso = models.CharField(max_length=20)
@@ -51,5 +51,5 @@ class Curso(models.Model):
     obs = models.TextField()
 
     def __str__(self):
-        return self.nomeCurso +'-'+  str(self.total)
+        return self.nomeCurso
 

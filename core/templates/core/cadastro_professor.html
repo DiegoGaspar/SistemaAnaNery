@@ -2,87 +2,96 @@
 {% load bootstrap %}
 
 {% block main %}
-<ul class="nav nav-pills">
+{% include 'logo-sistema.html'%}
+<div class="row">
+    <div class="col menu-sistem">
+        <ul class="nav nav-pills">
             <li class="nav-item">
-            <a class="nav-link" href="{% url 'core_home'%}">Home</a>
+                    <a class="nav-link" href="{% url 'core_home'%}">Home</a>
             </li>
             <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Serviços</a>
-            <div class="dropdown-menu">
-                <a class="dropdown-item " href="{% url 'core_aluno_novo'%}">Cadastro de Alunos</a>
-                <a class="dropdown-item " href="{% url 'core_lista_alunos'%}">Lista de Alunos</a>
-                <div class="dropdown-divider"></div>
-                <a class="dropdown-item active" href="{% url 'core_professor_novo'%}">Cadastro de Professor</a>
-                <a class="dropdown-item " href="{% url 'core_lista_professor'%}">Lista de Professores</a>
-            </div>
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Aluno</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item " href="{% url 'core_aluno_novo'%}">Cadastro de Aluno</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item " href="{% url 'core_lista_alunos'%}">Lista de Alunos</a>
+                    </div>
             </li>
-            {% if user.is_authenticated %}
-                <li class="nav-item">
-                    <a class="nav-link disabled" href="">Olá, {{ user }}</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'logout'%}">Logout</a>
-                </li>
-            {% else %}
-                <li class="nav-item">
-                    <a class="nav-link" href="{% url 'login' %}">Login</a>
-                </li>
-            {% endif %}
-</ul>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle active" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Professor</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item active" href="{% url 'core_professor_novo'%}">Cadastro de Professor</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item " href="{% url 'core_lista_professor'%}">Lista de Professores</a>
+                    </div>
+            </li>
+            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Curso</a>
+                    <div class="dropdown-menu">
+                        <a class="dropdown-item " href="{% url 'core_curso_novo'%}">Cadastro de Curso</a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item " href="{% url 'core_lista_cursos'%}">Lista de Cursos</a>
+                    </div>
+            </li>
 
+        </ul>
+    </div>
+</div>
 <div class="row">
     <div class="col-12">
         <h1>Cadastro de Facilitador</h1>
     </div>
 </div>
 
-<form action="{% url   'core_professor_novo'  %}" method="POST">
-    {% csrf_token %}
-    <div class="row">
-        <div class="col-sm-6">
-            {{form.nome|bootstrap_horizontal}}
-         </div>
-        <div class="col-sm-6">
-            {{form.cpf|bootstrap_horizontal}}
-         </div>
-    </div>
-    <div class="row">
-        <div class="col-sm-6">
-             {{form.pai|bootstrap_horizontal}}
-        </div>
-        <div class="col-sm-6">
-             {{form.mae|bootstrap_horizontal}}
-         </div>
-    </div>
-    <div class="row">
-         <div class="col-sm-6">
-            {{form.nascimento|bootstrap_horizontal}}
-         </div>
-         <div class="col-sm-6">
-            {{form.sexo|bootstrap_horizontal}}
-         </div>
-    </div>
-    <div class="row">
-         <div class="col-sm-6">
-            {{form.email|bootstrap_horizontal}}
-         </div>
-        <div class="col-sm-6">
-            {{form.coren|bootstrap_horizontal}}
-         </div>
-    </div>
-    <div class="row">
-         <div class="col-sm-6">
-            {{form.endereco|bootstrap_horizontal}}
-         </div>
-        <div class="col-sm-6">
-            {{form.telefone|bootstrap_horizontal}}
-         </div>
-    </div>
+<div class="row">
+    <div class="col-12">
+        <form action="{% url   'core_professor_novo'  %}" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-sm-8">
+                    {{form.nome|bootstrap }}
+                 </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-8">
+                     {{form.pai|bootstrap}}
+                </div>
+                <div class="col-sm-8">
+                     {{form.mae|bootstrap}}
+                 </div>
+            </div>
+            <div class="row">
+                 <div class="col-sm-1">
+                    {{form.nascimento|bootstrap}}
+                 </div>
+                 <div class="col-sm-1">
+                    {{form.sexo|bootstrap}}
+                 </div>
+                <div class="col-sm-2">
+                    {{form.coren|bootstrap}}
+                 </div>
+                <div class="col-sm-2">
+                    {{form.cpf|bootstrap}}
+                 </div>
+                <div class="col-sm-2">
+                    {{form.telefone|bootstrap_horizontal}}
+                 </div>
+            </div>
+            <div class="row">
+                 <div class="col-sm-4">
+                    {{form.email|bootstrap_horizontal}}
+                 </div>
+                 <div class="col-sm-4">
+                    {{form.endereco|bootstrap_horizontal}}
+                 </div>
 
+            </div>
 
-    <button type="submit" class="btn btn-primary">Cadastrar</button>
-    <a href="{% url 'core_lista_professor' %}" class="btn btn-info">Lista de alunos</a>
-</form>
+            <button type="submit" class="btn btn-primary">Cadastrar</button>
+            <a href="{% url 'core_lista_professor' %}" class="btn btn-info">Lista de alunos</a>
+        </form>
+    </div>
+</div>
 
 
 
