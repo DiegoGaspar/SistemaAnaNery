@@ -8,7 +8,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 DEBUG = config('DEBUG', default=False,cast=bool)
 
-ALLOWED_HOSTS = ['https://cursoananery.herokuapp.com/']
+ALLOWED_HOSTS = ['cursoananery.herokuapp.com']
 
 
 INSTALLED_APPS = [
