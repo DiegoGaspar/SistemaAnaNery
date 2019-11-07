@@ -1,5 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
 .myButton {
-    background-color: rgb(69, 151, 41);
+    background-color: rgb(16, 53, 4);
     border-radius: 3px;
     border: 1px solid
     #bad794;
@@ -21,12 +25,8 @@
 	top:1px;
 }
 
-
-
-
-
 .menu-cor{
-    background: rgba(69, 151, 41,1);
+    background: rgb(16, 53, 4);
     position: fixed;
     font-size: 17px;
     weight:10%;
@@ -44,9 +44,8 @@
     float: inline-end;
 }
 
-
 body {
-    background:rgba(69, 151, 41,1);
+    background:rgb(16, 53, 4);
     font-family: 'latob', Arial, Helvetica, sans-serif;
     font-size: 1rem;
     font-weight: 550;
@@ -110,6 +109,16 @@ a {
     margin-top: 1.5em;
 }
 
+#slide{
+    width: 650px;
+    position:relative;
+}
+#slide img {
+    position: absolute;
+    z-index: 1;
+    display:none;
+    left:0;
+}
 
 /*--------------------------------------------------------------
 # Footer
