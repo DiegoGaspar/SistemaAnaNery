@@ -2,11 +2,13 @@
 
 <div class="row">
     <div class="col-12 menu-cor">
-        <img src="{% static 'img/favicon.png' %}" height="30">
-        <span><i class="fa fa-phone"></i> (85)985071080 -</span>
-        <span><i class="fa fa-map-marker"></i> Rua Solon Pinheiro,  1580  –  José Bonifácio – Fortaleza-CE. </span>
+        <img src="{% static 'img/favicon.png' %}" height="30" id="logo1">
+        <a href="#"> <img src="../static/img/fone.png" width="20" height="20"> (85)985071080 -</a>
+        <a href="http://api.whatsapp.com/send?1=pt_BR&phone=5585999561080"><img src="../static/img/whatsapp.png" width="20" height="20">
+            (85)99962-7174 </a>
+        <a href="https://www.google.com.br/maps/place/Curso+Ana+Nery/@-3.7443751,-38.5333751,17z/data=!3m1!4b1!4m5!3m4!1s0x7c74855b1a0f7bf:0xd9289184c67d8620!8m2!3d-3.7443751!4d-38.5311864" target="_blank">
+            <img src="../static/img/img_loc.png" width="25" height="37"> Rua Solon Pinheiro,  1580  –  José Bonifácio – Fortaleza-CE.</a>
+        <a href="{% url 'core_home' %}" target="_blank" id="logo2"><img src="../static/img/login.png" width="25" height="20"> Login</a>
     </div>
-    <div class="col menu-login">
-        <a href="{% url 'core_home' %}" target="_blank"><strong>LOGIN</strong></a>
-    </div>
+
 </div>

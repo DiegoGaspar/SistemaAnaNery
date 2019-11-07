@@ -1,6 +1,4 @@
 .myButton {
-    background:
-    rgb(69, 151, 41);
     background-color: rgb(69, 151, 41);
     border-radius: 3px;
     border: 1px solid
@@ -30,62 +28,22 @@
 .menu-cor{
     background: rgba(69, 151, 41,1);
     position: fixed;
-    font-size: 18px;
+    font-size: 17px;
     weight:10%;
     width: 100%;
-    height: 6%;
+    height: auto;
     padding: 7px 0 0 40px;
 }
-.menu-login{
-    text-align: end;
-    position: fixed;
-    padding: 10px 58px;
+#logo1 {
+    padding: 0px 43px;
+    float: left;
+}
 
+#logo2 {
+    width: 127px;
+    float: inline-end;
 }
-.botao-inicial {
-	-moz-box-shadow:inset 2px 1px 32px 16px #f9eca0;
-	-webkit-box-shadow:inset 2px 1px 32px 16px #f9eca0;
-	box-shadow:inset 2px 1px 32px 16px #f9eca0;
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f0c911), color-stop(1, #f2ab1e) );
-	background:-moz-linear-gradient( center top, #f0c911 5%, #f2ab1e 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0c911', endColorstr='#f2ab1e');
-	background-color:#f0c911;
-	-webkit-border-top-left-radius:41px;
-	-moz-border-radius-topleft:41px;
-	border-top-left-radius:41px;
-	-webkit-border-top-right-radius:0px;
-	-moz-border-radius-topright:0px;
-	border-top-right-radius:0px;
-	-webkit-border-bottom-right-radius:41px;
-	-moz-border-radius-bottomright:41px;
-	border-bottom-right-radius:41px;
-	-webkit-border-bottom-left-radius:0px;
-	-moz-border-radius-bottomleft:0px;
-	border-bottom-left-radius:0px;
-	text-indent:-2.62px;
-	border:1px solid #e65f44;
-	display:inline-block;
-	color:#c92200;
-	font-family:Times New Roman;
-	font-size:22px;
-	font-weight:bold;
-	font-style:normal;
-	height:65px;
-	line-height:65px;
-	width:131px;
-	text-decoration:none;
-	text-align:center;
-	text-shadow:10px 0px 10px #ded17c;
-}
-.botao-inicial:hover {
-	background:-webkit-gradient( linear, left top, left bottom, color-stop(0.05, #f2ab1e), color-stop(1, #f0c911) );
-	background:-moz-linear-gradient( center top, #f2ab1e 5%, #f0c911 100% );
-	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#f2ab1e', endColorstr='#f0c911');
-	background-color:#f2ab1e;
-}.botao-inicial:active {
-	position:relative;
-	top:1px;
-}
+
 
 body {
     background:rgba(69, 151, 41,1);
@@ -99,13 +57,14 @@ body {
 a {
     color:#fff;
  }
+ a:hover {
+    color:#ffa32e;
+ }
 .bg_video{
 			position: fixed;
 			right: 0;
-			min-width: 100%;
-			min-height: 100%;
-			width: auto;
-			height: auto;
+			width: 100%;
+			height: 118%;
 			z-index: -1000;
 			background-size: cover;
 		}
@@ -113,17 +72,15 @@ a {
 .bg-inicial{
     background-repeat: no-repeat;
     background-size:100%;
-    padding: 14% 1em 20% 1em;
     width: 100%;
     height: auto;
-    padding-block-start: 205px;
+    padding-block-start: 50px;
 
  }
 .bg-inicial nav{
     text-align: center;
     padding: 45px 16px 0px 0px;
     margin-block-start: 67px;
-    margin-block-end: -89px;
 }
 .bg-inicial a{
     text-align: center;
@@ -134,17 +91,16 @@ a {
     text-align: center;
 }
 .inicial h1 {
-    display: block;
+    display: inline-block;
 }
 .inicial li {
-    display: inline-block;
-    width: 250px;
+    display: contents;
+    width: 100%;
     margin-right: 0;
 }
 .inicial h1 a {
     display: inline-block;
     width: 100%;
-    max-width: 450px;
     padding: 0 1em;
 }
 .inicial ul {
@@ -154,20 +110,6 @@ a {
     margin-top: 1.5em;
 }
 
-.bg-dados {
-}
-.dados {
-    max-width: var(--largura-padrao-site);
-    margin: 0 auto;
-    overflow: hidden;
-}
-
-.dados li {
-    float: left;
-    overflow: hidden;
-    padding: 0 1em;
-    width: 20%;
-}
 
 /*--------------------------------------------------------------
 # Footer
