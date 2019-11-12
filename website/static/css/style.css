@@ -114,42 +114,8 @@ a {
     width: 70vh;
     position: relative;
     top: 66px;
+    margin-block-end: 82px;
 }
-
-@media only screen
-and (min-device-width : 320px)
-and (max-device-width : 568px) {
-
-  .bg-inicial{
-    padding-block-start: 30px;
-
-  }
-
-  .bg-inicial nav {
-      padding: 0;
-      margin-block-start:0;
-  }
-  .inicial h1 a {
-    padding: 0;
-    }
-
-
-  #logo1{display:none;}
-  #info-1{display:none;}
-  #info-2{display:none;}
-  #info-3{display:none;}
-  #logo2{
-    display: inline-flex;
-  }
-   .bg_video{
-      height: 42%;
-   }
-  #slide{
-    width:50vh;
-  }
-
-}
-
 
 /*--------------------------------------------------------------
 # Footer
@@ -157,14 +123,15 @@ and (max-device-width : 568px) {
 
 #footer {
   background: #000;
-  padding: 0 0 6px 0;
+  padding: 0 0 0 0;
   color: #eee;
   font-size: 14px;
+  display:none;
 }
 
 #footer .footer-top {
   background: rgb(49, 55, 52);
-  padding: 60px 0 30px 0;
+  padding:0;
   width: 100%;
 }
 
@@ -313,4 +280,46 @@ and (max-device-width : 568px) {
   text-align: center;
   font-size: 13px;
   color: #ddd;
+}
+
+/*--------------------------------------------------------------
+# Media
+--------------------------------------------------------------*/
+
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px) {
+
+  .bg-inicial{
+    padding-block-start: 30px;
+
+  }
+
+  .bg-inicial nav {
+      padding: 0;
+      margin-block-start:0;
+  }
+  .inicial h1 a {
+    padding: 0;
+    }
+
+
+  #logo1{display:none;}
+  #info-1{display:none;}
+  #info-2{display:none;}
+  #info-3{display:none;}
+  #logo2{
+    display: inline-flex;
+  }
+   .bg_video{
+      height: 42%;
+   }
+  #slide{
+    width:50vh;
+  }
+  #footer {
+    display:block;
+  }
+
+
 }
