@@ -291,7 +291,7 @@ and (min-device-width : 320px)
 and (max-device-width : 568px) {
 
   .bg-inicial{
-    padding-block-start: 0px;
+    padding-block-start: 36px;
 
   }
 
@@ -315,7 +315,8 @@ and (max-device-width : 568px) {
       height: 42%;
    }
   #slide{
-    width:50vh;
+    width:52vh;
+    top: 38px;
   }
   #footer {
     display:block;
