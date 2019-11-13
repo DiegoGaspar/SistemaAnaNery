@@ -291,7 +291,7 @@ and (min-device-width : 320px)
 and (max-device-width : 568px) {
 
   .bg-inicial{
-    padding-block-start: 30px;
+    padding-block-start: 0px;
 
   }
 
