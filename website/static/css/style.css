@@ -111,7 +111,7 @@ a {
 }
 
 #slide{
-    width: 70vh;
+    width: 100vh;
     position: relative;
     top: 66px;
     margin-block-end: 82px;
@@ -316,6 +316,50 @@ and (max-device-width : 568px) {
    }
   #slide{
     width:52vh;
+    top: 38px;
+  }
+  #footer {
+    display:block;
+  }
+}
+/*______________________________*/
+@media only screen
+and (min-device-width : 320px)
+and (max-device-width : 568px)
+and (orientation : landscape)  {
+  .myButton{
+    font-size: 14px;
+    padding: 4px 14px;
+  }
+  .img-fluid{
+    max-width:53%;
+  }
+  .bg-inicial{
+    padding-block-start: 36px;
+
+  }
+
+  .bg-inicial nav {
+      padding: 0;
+      margin-block-start:0;
+  }
+  .inicial h1 a {
+    padding: 0;
+    }
+
+
+  #logo1{display:none;}
+  #info-1{display:none;}
+  #info-2{display:none;}
+  #info-3{display:none;}
+  #logo2{
+    display: inline-flex;
+  }
+   .bg_video{
+      height: 100%;
+   }
+  #slide{
+    width:105vh;
     top: 38px;
   }
   #footer {
