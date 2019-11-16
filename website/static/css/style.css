@@ -283,12 +283,55 @@ a {
 }
 
 /*--------------------------------------------------------------
-# Media
+# Media Queries
 --------------------------------------------------------------*/
+@media (max-width : 1090px){
+  .bg-inicial{
+    padding-block-start: 36px;
 
-@media only screen
+  }
+
+  .bg-inicial nav {
+      padding: 0;
+      margin-block-start:0;
+  }
+  .inicial h1 a {
+    padding: 0;
+    }
+
+
+  #logo1{display:none;}
+  #info-1{display:none;}
+  #info-2{display:none;}
+  #info-3{display:none;}
+  #logo2{
+    display: inline-flex;
+  }
+   .bg_video{
+      height: 74%;
+   }
+  #slide{
+    width: 73vh;
+    top: 80px;
+  }
+  #footer {
+    display:block;
+  }
+  #footer .footer-contact{
+    flex: 0 0 45%;
+    max-width:100%
+  }
+
+  #footer .footer-info{
+    flex: 0 0 44%;
+    max-width: 100%;
+  }
+}
+
+/*_________________________________*/
+@media screen
 and (min-device-width : 320px)
-and (max-device-width : 568px) {
+and (max-device-width : 767px){
 
   .bg-inicial{
     padding-block-start: 36px;
@@ -325,7 +368,7 @@ and (max-device-width : 568px) {
 /*______________________________*/
 @media only screen
 and (min-device-width : 320px)
-and (max-device-width : 568px)
+and (max-device-width : 768px)
 and (orientation : landscape)  {
   .myButton{
     font-size: 14px;
@@ -365,6 +408,44 @@ and (orientation : landscape)  {
   #footer {
     display:block;
   }
-
-
 }
+/* iPad */
+
+@media screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px){
+
+  .bg-inicial{
+    padding-block-start: 36px;
+
+  }
+
+  .bg-inicial nav {
+      padding: 0;
+      margin-block-start:0;
+  }
+  .inicial h1 a {
+    padding: 0;
+    }
+
+
+  #logo1{display:none;}
+  #info-1{display:none;}
+  #info-2{display:none;}
+  #info-3{display:none;}
+  #logo2{
+    display: inline-flex;
+  }
+   .bg_video{
+      height: 42%;
+   }
+  #slide{
+    width: 71vh;
+    top: 265px;
+  }
+  #footer {
+    display:block;
+    margin-block-start: 360px;
+  }
+}
+/*______________________________*/
